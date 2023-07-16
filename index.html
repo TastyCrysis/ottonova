@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+</head>
+<header>
+  <img src="images/logo_ottonova_bildmarke_azure_RGB.png" alt="Logo" class="logo" />
+  <nav>
+    <div class="nav-item">
+      <img class="nav-item-icon" id="phone" src="images/call-outline.png" />
+      <a class="hidden" href="tel:01702488443" id="phoneNumber">0170 24 88 443</a>
+    </div>
+    <div class="nav-item">
+      <img class="nav-item-icon" id="mail" src="images/mail-outline.png" />
+      <a class="hidden" href="mailto:gampep@yahoo.com" id="mailAddress">gampep@yahoo.com</a>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <div class="flex-wrapper">
+    <div class="logo-wobble">
+      <span class="child1"></span>
+      <span class="child2"></span>
+      <span class="child3"></span>
+      <div class="logo-img">
+        <img src="images/logo_ottonova_bildmarke_negativ_RGB.png" alt="Logo" />
+      </div>
+    </div>
+  </div>
+  <div class="radio-container">
+    <div class="radio-button">
+      <input type="radio" id="male" name="gender" value="male" class="radio-input" checked />
+      <label for="male" class="man label" id="man"></label>
+    </div>
+    <div class="radio-button">
+      <input type="radio" id="female" name="gender" value="female" class="radio-input" />
+      <label for="female" class="woman label" id="woman"></label>
+    </div>
+  </div>
+  <div class="form-container">
+    <form id="customerForm">
+      <div>
+        <label for="name" class="sr-only">Name</label>
+        <input type="text" name="name" id="name" placeholder="Name" required />
+      </div>
+      <div>
+        <label for="email" class="sr-only">Email</label>
+        <input type="email" name="email" id="email" placeholder="Email" required />
+      </div>
+      <div>
+        <label for="tel" class="sr-only">Telefon</label>
+        <input type="tel" name="tel" id="tel" placeholder="Telefon" required />
+      </div>
+      <div>
+        <button type="submit" class="submit-button" id="submit-button" disabled>
+          Absenden
+        </button>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+  <script src="submit.js" type="module"></script>
+</body>
+
+</html>

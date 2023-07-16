@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: white;
+  --font: Arial, sans-serif;
+  --form-width: 300px;
+  --primary-color: #0083ea;
+  --secondary-color: #999fb7;
+  --border-radius: 5px;
+  --box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  --border-gray: 1px solid #999fb7;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: var(--font);
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 1rem;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  height: 30px;
+}
+
+.nav-item-icon {
+  height: 50px;
+}
+
+.hidden {
+  text-align: center;
+  padding: 10px 12px;
+  width: max-content;
+  border: 1px solid none;
+  border-radius: 8px;
+  background-color: transparent;
+  color: black;
+  box-shadow: var(--box-shadow);
+  text-decoration: none;
+  position: absolute;
+  bottom: -3.5rem;
+  right: 1rem;
+  display: none;
+}
+
+.flex-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.logo-wobble {
+  position: relative;
+  display: inline-block;
+  width: 128px;
+  height: 128px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.logo-wobble span.child1 {
+  animation: rotateR 4s linear infinite;
+  border-radius: 50px 65px 67px 61px;
+  opacity: 0.5;
+  transform-origin: 49% 51%;
+}
+
+.logo-wobble span.child2 {
+  animation: rotateL 3.5s linear infinite;
+  border-radius: 60px 61px 58px 68px;
+  opacity: 0.3;
+  transform-origin: 51% 51%;
+}
+
+.logo-wobble span.child3 {
+  animation: rotateR 3s linear infinite;
+  border-radius: 59px 58px 57px 61px;
+  opacity: 0.5;
+  transform-origin: 51% 51%;
+}
+
+.logo-wobble span {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 128px;
+  height: 128px;
+  background-image: linear-gradient(to top right, #0083ea, #20c2e0);
+  transform: rotate(0);
+}
+
+.logo-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80px;
+  aspect-ratio: 1;
+}
+
+.logo-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@keyframes rotateR {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.radio-container {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  padding: 10px -10px;
+  margin-top: 50px;
+}
+
+.radio-button {
+  position: relative;
+}
+
+.radio-button .radio-input {
+  display: none;
+}
+
+.radio-button .man {
+  padding: 10px 50px;
+  cursor: pointer;
+  background-image: url("images/male.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  border: var(--border-gray);
+  border-radius: 10px 0 0 10px;
+}
+
+.radio-button .woman {
+  padding: 10px 50px;
+  cursor: pointer;
+  background-image: url("images/female.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  border: var(--border-gray);
+  border-radius: 0 10px 10px 0;
+}
+
+input[type="radio"]:checked+label.woman {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  background-image: url("images/female_waving.svg");
+}
+
+input[type="radio"]:checked+label.man {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  background-image: url("images/male_waving.svg");
+}
+
+.form-container {
+  width: var(--form-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  width: var(--form-width);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+}
+
+input:focus-visible {
+  border: 1px solid var(--primary-color);
+  outline: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.submit-button {
+  width: 80%;
+  height: 50px;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--background-color);
+  margin: 10px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.submit-button:disabled {
+  background-color: #cccfdb;
+  cursor: not-allowed;
+  border: none;
+}
